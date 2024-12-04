@@ -6,24 +6,24 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.io/packages/source/p/pathable/pathable-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/p/pathable/pathable-{{ version }}.tar.gz
     sha256: 5c869d315be50776cc8a993f3af43e0c60dc01506b399643f919034ebf4cdcab
   - folder: src
     url: https://github.com/p1c2u/pathable/archive/refs/tags/{{ version }}.tar.gz
     sha256: eea76120e5fdc54f4e9b7bc5e24748d163cef61c3e60ed32675828ade141cf4b
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: cd dist && {{ PYTHON }} -m pip install . -vv
+  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=3.7
     - poetry-core >=1.0.0
+    - python {{ python_min }}
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -36,6 +36,7 @@ test:
   requires:
     - pip
     - pytest-cov
+    - python {{ python_min }}
 
 about:
   home: https://github.com/p1c2u/pathable
