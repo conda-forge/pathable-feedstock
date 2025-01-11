@@ -1,4 +1,4 @@
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 package:
   name: pathable
@@ -7,13 +7,13 @@ package:
 source:
   - folder: dist
     url: https://pypi.org/packages/source/p/pathable/pathable-{{ version }}.tar.gz
-    sha256: 5c869d315be50776cc8a993f3af43e0c60dc01506b399643f919034ebf4cdcab
+    sha256: 6905a3cd17804edfac7875b5f6c9142a218c7caef78693c2dbbbfbac186d88b2
   - folder: src
     url: https://github.com/p1c2u/pathable/archive/refs/tags/{{ version }}.tar.gz
-    sha256: eea76120e5fdc54f4e9b7bc5e24748d163cef61c3e60ed32675828ade141cf4b
+    sha256: 1ef8fc64baab9440e14fdb1dd7ef7bef9e6d9dcba9d0552ba3f83c6cc1f2a0ab
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
