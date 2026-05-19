@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.5.0"
+  version: "0.6.0"
   python_check_max: "3.14"
 
 package:
@@ -11,10 +11,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/pathable/pathable-${{ version }}.tar.gz
-    sha256: d81938348a1cacb525e7c75166270644782c0fb9c8cecc16be033e71427e0ef1
+    sha256: 6404b8b82aef5ff0fd478934137128b99b12212ba35afdde5525ca4f8388ea58
     target_directory: dist
   - url: https://github.com/p1c2u/pathable/archive/refs/tags/${{ version }}.tar.gz
-    sha256: a11fab524f653bb4cabe4cb06a0accbe115db8a02cdb3153a608d1dd9a56a373
+    sha256: ee92e59b251ab95f23e2a7f9813c933e6a78c546f00b65b984528dcecbd15b3e
     target_directory: src
 
 build:
